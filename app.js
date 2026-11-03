@@ -1,5 +1,5 @@
 var app = angular.module('myApp', []);
 
 app.controller('MyController', function($scope) {
-    $scope.name = "sin";
+    $scope.name = "sin:)";
 });
