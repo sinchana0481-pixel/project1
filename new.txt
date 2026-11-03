@@ -1,0 +1,49 @@
+<h2>Student Registration Form</h2>
+
+
+<label>Enter Your Name:</label>
+<input type="text" [(ngModel)]="name">
+
+<br><br>
+
+
+<label>Enter Your Age:</label>
+<input type="number" [(ngModel)]="age">
+
+<br><br>
+
+
+<label>Select Your Department:</label>
+<select (change)="department = $any($event.target).value">
+    <option value="">Select Department</option>
+    <option value="CSE">CSE</option>
+    <option value="ISE">ISE</option>
+    <option value="AIML">AIML</option>
+    <option value="ECE">ECE</option>
+    <option value="EEE">EEE</option>
+</select>
+
+<br><br>
+
+
+<label>Select Your Semester:</label>
+<select (change)="semester = $any($event.target).value">
+    <option value="">Select Semester</option>
+    <option value="1st Semester">1st Semester</option>
+    <option value="2nd Semester">2nd Semester</option>
+    <option value="3rd Semester">3rd Semester</option>
+    <option value="4th Semester">4th Semester</option>
+    <option value="5th Semester">5th Semester</option>
+    <option value="6th Semester">6th Semester</option>
+    <option value="7th Semester">7th Semester</option>
+    <option value="8th Semester">8th Semester</option>
+</select>
+
+<br><br>
+
+<h3>Student Details</h3>
+
+<p>Name: {{name}}</p>
+<p>Age: {{age}}</p>
+<p>Department: {{department}}</p>
+<p>Semester: {{semester}}</p>

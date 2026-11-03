@@ -1,5 +1,25 @@
-var app = angular.module('myApp', []);
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Angular project</title>
+     <script src="node_modules/angular/angular.js"></script>
+     <script src="app.js"></script>
 
-app.controller('MyController', function($scope) {
-    $scope.name = "sin:)";
-});
+</head>
+<body ng-controller="MyController">
+    <h1>student details</h1>
+    <h1>Hello {{name}} </h1>
+    <h1>student details</h1>
+<h2>{{name}}</h2>
+
+<h3>update the student name</h3>
+
+<input type="text" ng-model="name">
+
+<p>updated name: {{name}}</p>
+
+
+</body>
+</html>
