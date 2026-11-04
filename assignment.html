@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="studentApp">
+<head>
+  <script src="angular.js"></script>
+  <script src="app.js"></script>
+  <style>
+    .pass { color: green; }
+    .fail { color: red; }
+  </style>
+</head>
+<body ng-controller="CollegeController">
+
+  <h2>{{ collegeName }}</h2>
+
+  <div ng-controller="StudentController">
+    <!-- Student Entry Form -->
+    <input type="text" ng-model="studentName" placeholder="Name">
+    <input type="text" ng-model="department" placeholder="Department">
+    <input type="number" ng-model="semester" placeholder="Semester">
+    <p>Entered: {{ studentName }} - {{ department }} - Sem {{ semester }}</p>
+
+    <!-- Actions -->
+    <button ng-click="addStudent()">Add Student</button>
+    <button ng-click="showDetails = !showDetails">Toggle Details</button>
+
+    <!-- Details Section -->
+    <div ng-show="showDetails">
+      <p>Department: {{ department }}, Semester: {{ semester }}</p>
+    </div>
+
+    <!-- Student List -->
+    <ul>
+      <li ng-repeat="student in students">{{ student }}</li>
+    </ul>
+
+    <!-- Examination Result -->
+    <input type="number" ng-model="marks" placeholder="Marks">
+    <p ng-if="marks !== null && marks !== undefined" ng-class="{'pass': marks >= 40, 'fail': marks < 40}">
+      {{ marks >= 40 ? 'Pass' : 'Needs Improvement' }}
+    </p>
+  </div>
+
+</body>
+</html>

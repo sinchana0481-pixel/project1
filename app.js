@@ -1,14 +1,18 @@
-"StudentController", function($scope) {
-        $scope.name = "john";
-        $scope.department = "Computer Science";
-        $scope.semester = 3;
+/* Name: Sinchana | Department: Computer Science */
+var app = angular.module('studentApp', []);
 
-        //aray
-        $scope.students =[
-            "AMULYA E",
-            "AKSHAY U SHET",
-            "AMRUTHA H S",
-            "AYUSH KUMAR K S",
-        ];
+app.controller('CollegeController', function($scope) {
+  $scope.collegeName = "Sample College";
+});
+
+app.controller('StudentController', function($scope) {
+  $scope.students = ["Alice", "Bob", "Charlie"];
+  $scope.showDetails = false;
+
+  $scope.addStudent = function() {
+    if ($scope.studentName) {
+      $scope.students.push($scope.studentName);
+      $scope.studentName = "";
     }
-);
+  };
+});
